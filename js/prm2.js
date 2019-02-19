@@ -2,7 +2,7 @@
 
 // Write two functions: makeAllCaps, sortWords that gets an array and return a promise,
 // if the array contains anything but strings, it should throw an error.
-function prm2() {
+function init() {
 
     makeAllCaps(['cucumber', 'tomatos', 'avocado'])
         .then(sortWords)
