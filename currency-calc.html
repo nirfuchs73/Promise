@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Currency calc</title>
+    <link rel="stylesheet" href="css/helpers.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body onload="init()">
+    <!-- <div class="main-container flex"> -->
+    <table>
+        <tr>
+            <td>
+                <input type="text" class="amount" />
+            </td>
+            <td>
+                <select class="from-curr">
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="EUR">GBP</option>
+                    <option value="EUR">CAD</option>
+                    <option value="ILS">ILS</option>
+                </select>
+            </td>
+            <td>To</td>
+            <td>
+                <select class='to-curr'>
+                    <option value="USD">USD</option>
+                    <option value="EUR">EUR</option>
+                    <option value="EUR">GBP</option>
+                    <option value="EUR">CAD</option>
+                    <option value="ILS">ILS</option>
+                </select>
+            </td>
+            <td>
+                <button onclick="onConvertClicked()">Convert</button>
+            </td>
+            <td>
+                <input type="text" readonly class="result" />
+            </td>
+        </tr>
+    </table>
+    <!-- </div> -->
+
+    <script src="lib/axios.js"></script>
+    <script src="js/currency-calc-service.js"></script>
+    <script src="js/currency-calc.js"></script>
+</body>
+
+</html>
