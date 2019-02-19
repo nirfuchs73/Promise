@@ -13,9 +13,10 @@ function onConvertClicked() {
         var prm = convert(fromCurr, toCurr);
         prm.then((result) => {
             var key = fromCurr + '_' + toCurr;
-            // console.log('result', result[key]);
+            // console.log('result', result);
             var amount = document.querySelector('.amount').value;
-            document.querySelector('.result').value = (+amount * result[key]).toFixed(3);
+            var totalAmount = (+amount * result[key]).toFixed(3);
+            document.querySelector('.result').value = totalAmount;
         });
     }
 }
