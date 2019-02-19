@@ -1,5 +1,8 @@
 'use strict';
 
+// Here’s an example of a complex promise chain with multiple rejections,
+// run this code and fix the wrong comments
+
 function init() {
 
     const wait = time => new Promise(resolve => setTimeout(resolve, time));
