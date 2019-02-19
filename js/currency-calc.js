@@ -8,7 +8,6 @@ function onConvertClicked() {
     var fromCurr = document.querySelector('.from-curr').value;
     var toCurr = document.querySelector('.to-curr').value;
 
-
     if (fromCurr !== toCurr) {
         var prm = convert(fromCurr, toCurr);
         prm.then((result) => {

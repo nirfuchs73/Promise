@@ -1,9 +1,8 @@
 'use strict';
 
-function convert(fromCurr, toCurr) {
-    // console.log(fromCurr, toCurr);
-
-    var prmRes = axios.get('https://free.currencyconverterapi.com/api/v6/convert?q=' + fromCurr + '_' + toCurr + '&compact=ultra&apiKey=2f57ef8241d5fde0180b');
+function getGithubUsers() {
+    var api = 'https://api.github.com/users';
+    var prmRes = axios.get(api);
 
     prmRes.catch(err => {
         console.log('Service Cought an Error');
