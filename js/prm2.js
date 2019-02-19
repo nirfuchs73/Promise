@@ -17,16 +17,15 @@ function prm2() {
 
 function makeAllCaps(array) {
     return new Promise((resolve, reject) => {
-        var res = array.find((item) => {
-            return typeof item !== 'string';
+        array.find((item) => {
+            if (typeof item !== 'string') reject('Not valid array');
         });
-        // console.log('res', res);
-        if (res === undefined) resolve(array);
-        else reject('Not valid array');
+        resolve(array.map(item => item.toUpperCase()));
     });
 }
 
 function sortWords(array) {
-    // console.log('sortWords');
-    return array.sort();
+    return new Promise((resolve, reject) => {
+        resolve(array.sort());
+    });
 }
