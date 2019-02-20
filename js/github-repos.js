@@ -1,19 +1,17 @@
 'use strict';
 
 function init() {
-    var prm = getGithubUsers();
-    prm.then((users) => {
+    var prmGithubUsers = getGithubUsers();
+    prmGithubUsers.then((users) => {
         // console.log('users', users);
-        var prms = [];
 
-        users.map(user => {
-            var prmUserRepos = getUserRepos(user.repos_url);
-            prms.push(prmUserRepos);
+        var prmsUserRepos = users.map((user) => {
+            return getUserRepos(user.repos_url);
         });
 
-        Promise.all(prms)
-            .then(userRepos => {
-                var strHTML = '<tbody>';
+        Promise.all(prmsUserRepos)
+            .then((userRepos) => {
+                var strHTML = '';
                 users.map((user, idx) => {
                     strHTML += '<tr>';
                     strHTML += `<td><img src="${user.avatar_url}"></td>`;
@@ -22,7 +20,6 @@ function init() {
                     strHTML += '</tr>';
                 });
                 // console.log(strHTML);
-                strHTML += '</tbody>';
                 document.querySelector('.avatars').innerHTML = strHTML;
             });
     });

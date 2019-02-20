@@ -3,44 +3,8 @@
 function getGithubUsers() {
     var api = 'https://api.github.com/users';
     return axios.get(api).then(res => res.data);
-    // var prmRes = axios.get(api);
-
-    // prmRes.catch(err => {
-    //     console.log('Service Cought an Error');
-    // });
-
-    // prmRes.finally(() => {
-    //     console.log('Done handling res');
-    // });
-
-    // var prmData = prmRes.then(res => {
-    //     // console.log(res.data);
-    //     return res.data;
-    // });
-
-    // console.log('Done Sending the AJAX Request');
-    // // console.log(prmAns);
-    // return prmData;
 }
 
-function getUserRepos(api) {
-    return axios.get(api).then(res => res.data);
-
-    // var prmRes = axios.get(api);
-    // prmRes.catch(err => {
-    //     console.log('Service Cought an Error');
-    // });
-
-    // prmRes.finally(() => {
-    //     console.log('Done handling res');
-    // });
-
-    // var prmData = prmRes.then(res => {
-    //     // console.log(res.data);
-    //     return res.data;
-    // });
-
-    // console.log('Done Sending the AJAX Request');
-    // // console.log(prmAns);
-    // return prmData;
+function getUserRepos(url) {
+    return axios.get(url).then(res => res.data);
 }
