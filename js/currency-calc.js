@@ -1,7 +1,15 @@
 'use strict';
 
 function init() {
-
+    getCurrencies()
+        .then((result) => {
+            var res = Object.keys(result['results']);
+            // console.log('results', result.results);
+            console.log('res', res);
+            // result.results.map(res => {
+            //     console.log(res.currencyName);
+            // });
+        });
 }
 
 function onConvertClicked() {

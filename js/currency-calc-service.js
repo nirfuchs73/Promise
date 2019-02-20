@@ -1,5 +1,11 @@
 'use strict';
 
+function getCurrencies() {
+    var api = 'https://free.currencyconverterapi.com/api/v6/currencies?q=&compact=ultra&apiKey=2f57ef8241d5fde0180b';
+    return axios.get(api).then(res => res.data);
+    
+}
+
 function convert(fromCurr, toCurr) {
     // console.log(fromCurr, toCurr);
     var api = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + fromCurr + '_' + toCurr + '&compact=ultra&apiKey=2f57ef8241d5fde0180b';
