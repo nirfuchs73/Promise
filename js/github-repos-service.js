@@ -12,12 +12,33 @@ function getGithubUsers() {
         console.log('Done handling res');
     });
 
-    var prmAns = prmRes.then(res => {
+    var prmData = prmRes.then(res => {
         // console.log(res.data);
         return res.data;
     });
 
     console.log('Done Sending the AJAX Request');
     // console.log(prmAns);
-    return prmAns;
+    return prmData;
+}
+
+function getUserRepos(api) {
+    var prmRes = axios.get(api);
+
+    prmRes.catch(err => {
+        console.log('Service Cought an Error');
+    });
+
+    prmRes.finally(() => {
+        console.log('Done handling res');
+    });
+
+    var prmData = prmRes.then(res => {
+        // console.log(res.data);
+        return res.data;
+    });
+
+    console.log('Done Sending the AJAX Request');
+    // console.log(prmAns);
+    return prmData;
 }
