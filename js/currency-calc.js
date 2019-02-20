@@ -9,7 +9,7 @@ function onConvertClicked() {
     var toCurr = document.querySelector('.to-curr').value;
 
     if (fromCurr !== toCurr) {
-        var prm = convert(fromCurr, toCurr);
+        var prm = convert1(fromCurr, toCurr);
         prm.then((result) => {
             var key = fromCurr + '_' + toCurr;
             // console.log('result', result);

@@ -4,14 +4,14 @@ function init() {
     var prm = getGithubUsers();
     prm.then((users) => {
         // console.log('users', users);
-        var promises = [];
+        var prms = [];
 
         users.map(user => {
             var prmUserRepos = getUserRepos(user.repos_url);
-            promises.push(prmUserRepos);
+            prms.push(prmUserRepos);
         });
 
-        Promise.all(promises)
+        Promise.all(prms)
             .then(userRepos => {
                 var strHTML = '<tbody>';
                 users.map((user, idx) => {

@@ -2,8 +2,8 @@
 
 function convert(fromCurr, toCurr) {
     // console.log(fromCurr, toCurr);
-
-    var prmRes = axios.get('https://free.currencyconverterapi.com/api/v6/convert?q=' + fromCurr + '_' + toCurr + '&compact=ultra&apiKey=2f57ef8241d5fde0180b');
+    var api = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + fromCurr + '_' + toCurr + '&compact=ultra&apiKey=2f57ef8241d5fde0180b';
+    var prmRes = axios.get(api);
 
     prmRes.catch(err => {
         console.log('Service Cought an Error');
@@ -21,4 +21,9 @@ function convert(fromCurr, toCurr) {
     console.log('Done Sending the AJAX Request');
     // console.log(prmAns);
     return prmAns;
+}
+
+function convert1(fromCurr, toCurr) {
+    var api = 'https://free.currencyconverterapi.com/api/v6/convert?q=' + fromCurr + '_' + toCurr + '&compact=ultra&apiKey=2f57ef8241d5fde0180b';
+    return axios.get(api).then(res => res.data);
 }
